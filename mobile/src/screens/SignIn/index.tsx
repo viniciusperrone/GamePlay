@@ -10,6 +10,8 @@ import {
 import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './style';
 
+import { ButtonIcon } from '../../components/ButtonIcon';
+
 const SignIn: React.FC = () => {
     return (
         <View style={styles.container}>
@@ -37,7 +39,7 @@ const SignIn: React.FC = () => {
                     favoritos com seus amigos
                 </Text>
 
-                <Button
+                <ButtonIcon
                     title="Entrar com Discord"
                     activeOpacity={0.7}
                 />
