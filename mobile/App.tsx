@@ -12,7 +12,6 @@ import {
 } from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
 
-
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
     Inter_400Regular,
