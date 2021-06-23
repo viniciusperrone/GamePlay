@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import SignIn from './src/screens/SignIn';
 import { useFonts } from 'expo-font';
 import {
@@ -20,12 +21,19 @@ const App: React.FC = () => {
     Rajdhani_700Bold
   });
 
-  if(!fontsLoaded){
+  if (!fontsLoaded) {
     return <AppLoading />
   }
-  
+
   return (
-    <SignIn />
+    <>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      <SignIn />
+    </>
   );
 }
 

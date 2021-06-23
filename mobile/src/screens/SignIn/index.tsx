@@ -4,7 +4,6 @@ import {
     Text,
     Image,
     StatusBar,
-    Button
 } from 'react-native';
 
 import IllustrationImg from '../../assets/illustration.png';
@@ -15,11 +14,6 @@ import { ButtonIcon } from '../../components/ButtonIcon';
 const SignIn: React.FC = () => {
     return (
         <View style={styles.container}>
-            <StatusBar
-                barStyle="light-content"
-                backgroundColor="transparent"
-                translucent
-            />
 
             <Image
                 source={IllustrationImg}
