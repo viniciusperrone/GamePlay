@@ -11,9 +11,7 @@ import {
 } from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
 
-import SignIn from './src/screens/SignIn';
-import Home from './src/screens/Home';
-
+import Routes from './src/routes';
 import { Background } from './src/components/Background';
 
 const App: React.FC = () => {
@@ -30,13 +28,13 @@ const App: React.FC = () => {
 
   return (
     <>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
       <Background>
-        <Home />
+        <StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
+        <Routes />
       </Background>
     </>
   );
