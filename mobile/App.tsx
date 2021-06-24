@@ -1,6 +1,5 @@
 import React from 'react';
 import { StatusBar } from 'react-native';
-import SignIn from './src/screens/SignIn';
 import { useFonts } from 'expo-font';
 import {
   Inter_400Regular,
@@ -11,6 +10,11 @@ import {
   Rajdhani_700Bold
 } from '@expo-google-fonts/rajdhani';
 import AppLoading from 'expo-app-loading';
+
+import SignIn from './src/screens/SignIn';
+import Home from './src/screens/Home';
+
+import { Background } from './src/components/Background';
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
@@ -31,7 +35,9 @@ const App: React.FC = () => {
         backgroundColor="transparent"
         translucent
       />
-      <SignIn />
+      <Background>
+        <Home />
+      </Background>
     </>
   );
 }
