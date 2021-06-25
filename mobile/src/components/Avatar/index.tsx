@@ -11,7 +11,7 @@ type Props = {
 
 const Avatar = ({ urlImage } : Props) => {
 
-    const { secondary80, secondary100} = theme.colors
+    const { secondary80, secondary100} = theme.colors;
     return (
         <LinearGradient 
             style={style.container}
