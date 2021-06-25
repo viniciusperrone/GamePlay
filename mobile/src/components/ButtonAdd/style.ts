@@ -7,6 +7,7 @@ export const styles =  StyleSheet.create({
         width: 48,
         backgroundColor: theme.colors.primary,
         borderRadius: 8,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })

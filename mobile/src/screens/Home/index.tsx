@@ -14,6 +14,10 @@ const Home: React.FC = () => {
                     <Profile />
                     <ButtonAdd />
                 </View>
+
+                <View>
+                    {/* categoria */}
+                </View>
             </View>
         </>
     )
