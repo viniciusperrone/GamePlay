@@ -13,28 +13,29 @@ type Props = {
 } 
 const CategorySelected = ({ 
     categorySelected, 
-    setCategory
-} : Props) => {
+    setCategory 
+  }: Props) => {
+    
     return(
-        <ScrollView
-            horizontal
-            style={styles.container}
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle={{ paddingRight: 40 }}
-        >
-            {
-                categories.map(category => {
-                    <Category 
-                        key={category.id}
-                        title={category.title}
-                        icon={category.icon}
-                        checked={category.id === categorySelected}
-                        onPress={() => setCategory(category.id)}
-                    />
-                })
-            }
-        </ScrollView>
-    )
+      <ScrollView
+        horizontal
+        style={styles.container}  
+        showsHorizontalScrollIndicator={false}  
+        contentContainerStyle={{ paddingRight: 40 }}
+      >
+        {
+          categories.map(category => (
+            <Category 
+              key={category.id}
+              title={category.title}
+              icon={category.icon}
+              checked={category.id === categorySelected}
+              onPress={() => setCategory(category.id)}
+            />
+          ))
+        }
+      </ScrollView>
+    );
 }
 
 export default CategorySelected;
