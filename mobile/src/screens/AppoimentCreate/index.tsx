@@ -21,6 +21,8 @@ import { theme } from '../../global/styles/theme';
 import { style } from './style';
 import SmallInput from '../../components/SmallInput';
 
+import Guilds from '../Guilds';
+
 
 const AppoimentCreate = () => {
 
@@ -39,7 +41,10 @@ const AppoimentCreate = () => {
 
 
     return (
-        <KeyboardAvoidingView>
+        <KeyboardAvoidingView 
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height' }
+            style={style.container}
+        >
             <ScrollView>
                 <Header
                     title="Agendar Partida"
@@ -60,15 +65,14 @@ const AppoimentCreate = () => {
                 />
 
                 <View style={style.form}>
-                    <RectButton>
+                    <RectButton onPress={handleOpenGuilds}>
                         <View style={style.select}>
                             {
-                                <GuildIcon />
-                                // <View style={style.image}/>
+                                guild.icon ? <GuildIcon /> : <View style={style.image}/>
                             }
                             <View style={style.selectBody}>
                                 <Text style={style.label}>
-                                    Selecione um servidor
+                                    { guild.name ? guild.name : 'Selecione um servidor' }
                                 </Text>
                             </View>
 
@@ -135,7 +139,7 @@ const AppoimentCreate = () => {
             </ScrollView>
 
             <ModalView visible={openGuildsModa}>
-                {/* <Guilds handleGuildSelect={handleGuildSelect} /> */}
+                <Guilds handleGuildSelect={handleGuildSelect}/>
             </ModalView>
 
         </KeyboardAvoidingView>
