@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import SignIn from '../screens/SignIn';
 import Home from '../screens/Home';
+import AppoimentDetails from '../screens/AppoimentDetails';
 
 const { Navigator, Screen } = createStackNavigator();
 
@@ -24,6 +25,13 @@ const AuthRoutes = () => {
                 name="Home"
                 component={Home}
             />
+            
+            <Screen
+                name="AppoimentDetails"
+                component={AppoimentDetails}
+            />
+
+            
         </Navigator>
     )
 }
