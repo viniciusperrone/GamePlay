@@ -50,11 +50,11 @@ const Home: React.FC = () => {
     categoryId === category ? setCategory('') : setCategory(categoryId);
   }
 
-  function handleAppoimentDetails(){
+  function handleAppoimentDetails() {
     navigation.navigate('AppoimentDetails');
   }
 
-  function handleAppointmentCreate(){
+  function handleAppointmentCreate() {
     navigation.navigate('AppoimentCreate')
   }
 
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
       <View style={style.container}>
         <View style={style.header}>
           <Profile />
-          <ButtonAdd onPress={handleAppointmentCreate}/>
+          <ButtonAdd onPress={handleAppointmentCreate} />
         </View>
 
         <CategorySelected
@@ -71,26 +71,25 @@ const Home: React.FC = () => {
           setCategory={handleCategorySelect}
         />
 
-        <View style={style.content}>
-          <ListHeader
-            title="Partidas agendadas"
-            subtitle="Total 6"
-          />
+        <ListHeader
+          title="Partidas agendadas"
+          subtitle="Total 6"
+        />
 
-          <FlatList
-            data={appointments}
-            keyExtractor={item => item.id}
-            renderItem={({ item }) => (
-              <Appointment 
-                data={item} 
-                onPress={handleAppoimentDetails}
-              />
-            )}
-            ItemSeparatorComponent={() => <ListDivider />}
-            style={style.matches}
-            showsVerticalScrollIndicator={false}
-          />
-        </View>
+        <FlatList
+          data={appointments}
+          keyExtractor={item => item.id}
+          renderItem={({ item }) => (
+            <Appointment
+              data={item}
+              onPress={handleAppoimentDetails}
+            />
+          )}
+          ItemSeparatorComponent={() => <ListDivider />}
+          contentContainerStyle={{ paddingBottom: 69 }}
+          style={style.matches}
+          showsVerticalScrollIndicator={false}
+        />
 
       </View>
     </Background>

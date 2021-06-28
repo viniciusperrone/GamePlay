@@ -34,11 +34,18 @@ const AppoimentCreate = () => {
         setOpenGuildsModal(true);
     }
 
+    function handleCloseGuilds() {
+        setOpenGuildsModal(false);
+    }
+
     function handleGuildSelect(guildSelect: GuildProps) {
         setGuild(guildSelect);
         setOpenGuildsModal(false);
     }
 
+    function handleCategorySelect(categoryId: string) {
+        categoryId === category ? setCategory('') : setCategory(categoryId);
+      }
 
     return (
         <KeyboardAvoidingView 
@@ -60,8 +67,9 @@ const AppoimentCreate = () => {
 
                 <CategorySelected
                     hasCheckBox
-                    setCategory={setCategory}
+                    setCategory={handleCategorySelect}
                     categorySelected={category}
+
                 />
 
                 <View style={style.form}>
@@ -101,7 +109,9 @@ const AppoimentCreate = () => {
 
 
                         <View>
-                            <Text style={style.label}>
+                            <Text style={[style.label,{
+                                marginBottom: 12
+                            }]}>
                                 Hora e minuto
                             </Text>
 
@@ -116,7 +126,9 @@ const AppoimentCreate = () => {
                     </View>
 
                     <View style={[style.field, { marginBottom: 12 }]}>
-                        <Text style={style.label}>
+                        <Text style={[style.label,{
+                                marginBottom: 12
+                            }]}>
                             Descrição
                         </Text>
 
@@ -138,7 +150,7 @@ const AppoimentCreate = () => {
                 </View>
             </ScrollView>
 
-            <ModalView visible={openGuildsModa}>
+            <ModalView visible={openGuildsModa} closeModal={handleCloseGuilds}>
                 <Guilds handleGuildSelect={handleGuildSelect}/>
             </ModalView>
 
@@ -147,3 +159,5 @@ const AppoimentCreate = () => {
 }
 
 export default AppoimentCreate;
+
+// Background
