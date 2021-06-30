@@ -1,16 +1,22 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
+import { useAuth } from '../../hooks/auth';
+
 import Avatar from '../Avatar';
 
 import { style } from './style';
 
 const Profile: React.FC = () => {
+
+    const { user } = useAuth();
+    console.log(user);
+    
     return (
         <View style={style.container}>
             
             <Avatar 
-                urlImage="https://github.com/viniciusperrone.png"
+                urlImage={user.avatar}
             />
             <View>
                 <View style={style.user}>
@@ -19,7 +25,7 @@ const Profile: React.FC = () => {
                     </Text>
 
                     <Text style={style.username}>
-                        Vinicius
+                        { user.firstName }
                     </Text>
                 </View>
 

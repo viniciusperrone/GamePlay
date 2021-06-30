@@ -33,8 +33,8 @@ const AppoimentDetails = () => {
         },
         {
             id: '1',
-            username: 'Lorenzo',
-            avatar_url: 'https://github.com/lorenzowind.png',
+            username: 'Player01',
+            avatar_url: 'https://github.com/eduardasilva.png',
             status: 'offline'
         }
     ]
