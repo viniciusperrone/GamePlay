@@ -1,5 +1,5 @@
 <h1 align="center">
-  # GamePlay
+  GamePlay
 </h1>
 
 <p align="center">
